@@ -1,0 +1,9 @@
+{
+  "title" : "SD Insights",
+  "description" : "SD Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}

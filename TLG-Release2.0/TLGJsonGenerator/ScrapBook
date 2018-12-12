@@ -1,0 +1,315 @@
+insert into tabScoreCard values (null,'SST-001','PR-001','TEPS',25.0,'TM-002','team','Q-001','Question','Q-001',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','TEPS',35.0,'TM-002','team','Q-002','Question','Q-002',
+'TSC','TESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','TEPS',45.0,'TM-002','team','Q-003','Question','Q-003',
+'TSC','TESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','TEPS',55.0,'TM-002','team','Q-004','Question','Q-004',
+'TSC','TESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','TEPS',65.0,'TM-002','team','Q-005','Question','Q-005',
+'TSC','TESC','',0.0,now(),now());
+
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',25.0,'1','user','Q-001','Question','Q-001',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',35.0,'2','user','Q-001','Question','Q-001',
+'TSC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',45.0,'3','user','Q-001','Question','Q-001',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',55.0,'4','user','Q-001','Question','Q-001',
+'USC','UESC','',0.0,now(),now());
+
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',55.0,'1','user','Q-002','Question','Q-002',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',45.0,'2','user','Q-002','Question','Q-002',
+'TSC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',65.0,'3','user','Q-002','Question','Q-002',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',55.0,'4','user','Q-002','Question','Q-002',
+'USC','UESC','',0.0,now(),now());
+
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',50.0,'1','user','Q-003','Question','Q-003',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',60.0,'2','user','Q-003','Question','Q-003',
+'TSC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',70.0,'3','user','Q-003','Question','Q-003',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',90.0,'4','user','Q-003','Question','Q-003',
+'USC','UESC','',0.0,now(),now());
+
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',22.0,'1','user','Q-004','Question','Q-004',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',33.0,'2','user','Q-004','Question','Q-004',
+'TSC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',44.0,'3','user','Q-004','Question','Q-004',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',55.0,'4','user','Q-004','Question','Q-004',
+'USC','UESC','',0.0,now(),now());
+
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',56.0,'1','user','Q-005','Question','Q-005',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',66.0,'2','user','Q-005','Question','Q-005',
+'TSC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',76.0,'3','user','Q-005','Question','Q-005',
+'USC','UESC','',0.0,now(),now());
+insert into tabScoreCard values (null,'SST-001','PR-001','EPS',86.0,'4','user','Q-005','Question','Q-005',
+'USC','UESC','',0.0,now(),now());
+
+DROP TABLE IF EXISTS `tabResponseMetrics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabResponseMetrics` (
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_Name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`response_metric_id`, `tool_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-Insights-001', 'SST Insights Dashboard', '',
+	'/Tool/SST/SST-Insights-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SST-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-Index-001', 'SST KPI Index Dashboard', '',
+	'/Tool/SST/SST-Index-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SST-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-001', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-001.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-002', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-002.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-002');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-003', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-003.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-003');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-004', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-004.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-004');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-005', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-005.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-005');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-006', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-006.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-006');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-007', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-007.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-007');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-008', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-008.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-008');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-009', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-009.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-009');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-010', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-010.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-010');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-011', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-011.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-011');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-012', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-012.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-012');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-013', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-013.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-013');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-014', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-014.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-014');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-015', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-015.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-015');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-016', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-016.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-016');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-017', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-017.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-017');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-018', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-018.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-018');
+
+	
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-Insights-001', 'SST Brexit Insights Dashboard', '',
+	'/Tool/SSTBR/SSTBR-Insights-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SSTBR-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-Index-001', 'SST Brexit KPI Index Dashboard', '',
+	'/Tool/SSTBR/SSTBR-Index-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SSTBR-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-100', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-100.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-100');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-101', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-101.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-101');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-102', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-102.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-102');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-103', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-103.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-103');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-104', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-104.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-104');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-105', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-105.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-105');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-106', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-106.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-106');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-107', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-107.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-107');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-108', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-108.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-108');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-109', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-109.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-109');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-110', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-110.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-110');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-111', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-111.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-111');
+	
+/* Latest with jsonTemplate and ProjectId -- 05/Dec/18*/
+delete from tabDashboardData;
+
+INSERT INTO `tabDashboardData` VALUES 
+('ORG-001','SST-001','PR-001','SST-Insights-001','SST Insights Dashboard','json/SST-Insights-001.json','/Tool/SST/PR-001/SST-Insights-001.json','Active','2018-11-12 06:41:58','2018-11-16 07:35:45','2018-11-12 06:41:58','2018-11-16 07:35:45','0','Tool','SST-001'),
+('ORG-001','SST-001','PR-001','SST-Index-001','SST KPI Index Dashboard','json/SST-Index-001.json','/Tool/SST/PR-001/SST-Index-001.json','Active','2018-11-12 06:41:58','2018-11-16 07:35:45','2018-11-12 06:41:58','2018-11-16 07:35:45','0','Tool','SST-001'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-001','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-001.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:20','2018-11-12 06:41:58','2018-11-15 12:02:20','1','Question','Q-001'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-002','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-002.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:20','2018-11-12 06:41:58','2018-11-15 12:02:20','1','Question','Q-002'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-003','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-003.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:20','2018-11-12 06:41:58','2018-11-15 12:02:20','1','Question','Q-003'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-004','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-004.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:21','2018-11-12 06:41:58','2018-11-15 12:02:21','1','Question','Q-004'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-005','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-005.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:21','2018-11-12 06:41:58','2018-11-15 12:02:21','1','Question','Q-005'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-006','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-006.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:21','2018-11-12 06:41:59','2018-11-15 12:02:21','1','Question','Q-006'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-007','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-007.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:21','2018-11-12 06:41:59','2018-11-15 12:02:21','1','Question','Q-007'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-008','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-008.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:21','2018-11-12 06:41:59','2018-11-15 12:02:21','1','Question','Q-008'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-009','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-009.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:22','2018-11-12 06:41:59','2018-11-15 12:02:22','1','Question','Q-009'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-010','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-010.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:22','2018-11-12 06:41:59','2018-11-15 12:02:22','1','Question','Q-010'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-011','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-011.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:22','2018-11-12 06:41:59','2018-11-15 12:02:22','1','Question','Q-011'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-012','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-012.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:23','2018-11-12 06:41:59','2018-11-15 12:02:23','1','Question','Q-012'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-013','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-013.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:23','2018-11-12 06:41:59','2018-11-15 12:02:23','1','Question','Q-013'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-014','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-014.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:23','2018-11-12 06:41:59','2018-11-15 12:02:23','1','Question','Q-014'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-015','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-015.json','Active','2018-11-12 06:42:00','2018-11-15 12:02:23','2018-11-12 06:42:00','2018-11-15 12:02:23','1','Question','Q-015'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-016','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-016.json','Active','2018-11-12 06:42:00','2018-11-15 12:02:23','2018-11-12 06:42:00','2018-11-15 12:02:23','1','Question','Q-016'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-017','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-017.json','Active','2018-11-12 06:42:00','2018-11-15 12:02:24','2018-11-12 06:42:00','2018-11-15 12:02:24','1','Question','Q-017'),
+('ORG-001','SST-001','PR-001','SST-User-Team-Q-018','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-001/Questions/Q-018.json','Active','2018-11-12 06:42:01','2018-11-15 12:02:24','2018-11-12 06:42:01','2018-11-15 12:02:24','1','Question','Q-018'),
+('ORG-001','SST-001','PR-002','SST-Insights-001','SST Insights Dashboard','json/SST-Insights-001.json','/Tool/SST/PR-002/SST-Insights-001.json','Active','2018-11-12 06:41:58','2018-11-16 07:35:45','2018-11-12 06:41:58','2018-11-16 07:35:45','0','Tool','SST-001'),
+('ORG-001','SST-001','PR-002','SST-Index-001','SST KPI Index Dashboard','json/SST-Index-001.json','/Tool/SST/PR-002/SST-Index-001.json','Active','2018-11-12 06:41:58','2018-11-16 07:35:45','2018-11-12 06:41:58','2018-11-16 07:35:45','0','Tool','SST-001'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-001','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-001.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:20','2018-11-12 06:41:58','2018-11-15 12:02:20','1','Question','Q-001'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-002','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-002.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:20','2018-11-12 06:41:58','2018-11-15 12:02:20','1','Question','Q-002'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-003','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-003.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:20','2018-11-12 06:41:58','2018-11-15 12:02:20','1','Question','Q-003'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-004','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-004.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:21','2018-11-12 06:41:58','2018-11-15 12:02:21','1','Question','Q-004'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-005','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-005.json','Active','2018-11-12 06:41:58','2018-11-15 12:02:21','2018-11-12 06:41:58','2018-11-15 12:02:21','1','Question','Q-005'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-006','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-006.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:21','2018-11-12 06:41:59','2018-11-15 12:02:21','1','Question','Q-006'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-007','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-007.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:21','2018-11-12 06:41:59','2018-11-15 12:02:21','1','Question','Q-007'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-008','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-008.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:21','2018-11-12 06:41:59','2018-11-15 12:02:21','1','Question','Q-008'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-009','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-009.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:22','2018-11-12 06:41:59','2018-11-15 12:02:22','1','Question','Q-009'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-010','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-010.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:22','2018-11-12 06:41:59','2018-11-15 12:02:22','1','Question','Q-010'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-011','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-011.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:22','2018-11-12 06:41:59','2018-11-15 12:02:22','1','Question','Q-011'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-012','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-012.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:23','2018-11-12 06:41:59','2018-11-15 12:02:23','1','Question','Q-012'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-013','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-013.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:23','2018-11-12 06:41:59','2018-11-15 12:02:23','1','Question','Q-013'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-014','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-014.json','Active','2018-11-12 06:41:59','2018-11-15 12:02:23','2018-11-12 06:41:59','2018-11-15 12:02:23','1','Question','Q-014'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-015','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-015.json','Active','2018-11-12 06:42:00','2018-11-15 12:02:23','2018-11-12 06:42:00','2018-11-15 12:02:23','1','Question','Q-015'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-016','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-016.json','Active','2018-11-12 06:42:00','2018-11-15 12:02:23','2018-11-12 06:42:00','2018-11-15 12:02:23','1','Question','Q-016'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-017','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-017.json','Active','2018-11-12 06:42:00','2018-11-15 12:02:24','2018-11-12 06:42:00','2018-11-15 12:02:24','1','Question','Q-017'),
+('ORG-001','SST-001','PR-002','SST-User-Team-Q-018','SST User Team Dashboard','json/SST-User-Team.json','/Tool/SST/PR-002/Questions/Q-018.json','Active','2018-11-12 06:42:01','2018-11-15 12:02:24','2018-11-12 06:42:01','2018-11-15 12:02:24','1','Question','Q-018'),
+('ORG-001','SPP-001','PR-001','SPP-Insights-001','SPP  Insights Dashboard','json/SPP-Insights-001.json','/Tool/SPP/PR-001/SPP-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','SPP-001'),
+('ORG-001','SPP-001','PR-001','SPP-Index-001','SPP  KPI Index Dashboard','json/SPP-Index-001.json','/Tool/SPP/PR-001/SPP-Index-001.json','Active','2018-11-16 08:35:48','2018-11-22 12:13:57','2018-11-16 08:35:48','2018-11-22 12:13:57','0','Tool','SPP-001'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-200','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-200.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:57','2018-11-16 08:35:49','2018-11-22 12:13:57','1','Question','Q-200'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-201','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-201.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:57','2018-11-16 08:35:49','2018-11-22 12:13:57','1','Question','Q-201')
+,('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-202','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-202.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:57','2018-11-16 08:35:49','2018-11-22 12:13:57','1','Question','Q-202'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-203','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-203.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:57','2018-11-16 08:35:49','2018-11-22 12:13:57','1','Question','Q-203'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-204','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-204.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-204'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-205','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-205.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-205'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-206','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-206.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-206'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-207','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-207.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-207'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-208','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-208.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-208'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-209','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-209.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-209'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-210','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-210.json','Active','2018-11-16 08:35:49','2018-11-22 12:13:58','2018-11-16 08:35:49','2018-11-22 12:13:58','1','Question','Q-210'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-211','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-211.json','Active','2018-11-16 08:35:51','2018-11-22 12:13:58','2018-11-16 08:35:51','2018-11-22 12:13:58','1','Question','Q-211'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-212','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-212.json','Active','2018-11-16 08:35:51','2018-11-22 12:13:58','2018-11-16 08:35:51','2018-11-22 12:13:58','1','Question','Q-212'),
+('ORG-001','SPP-001','PR-001','SPP-User-Team-Q-213','SPP User Team Dashboard','json/SPP-User-Team.json','/Tool/SPP/PR-001/Questions/Q-213.json','Active','2018-11-16 08:35:51','2018-11-22 12:13:58','2018-11-16 08:35:51','2018-11-22 12:13:58','1','Question','Q-213'),
+('ORG-001','LIF-001','PR-001','LIF-Insights-001','LIF  Insights Dashboard','json/LIF-Insights-001.json','/Tool/LIF/PR-001/LIF-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','LIF-001'),
+('ORG-001','LIF-001','PR-001','LIF-Index-001','LIF  KPI Index Dashboard','json/LIF-Index-001.json','/Tool/LIF/PR-001/LIF-Index-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','LIF-001'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-300','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-300.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-300'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-301','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-301.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-301'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-302','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-302.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-302'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-303','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-303.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-303'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-304','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-304.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-304'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-305','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-305.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-305'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-306','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-306.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-306'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-307','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-307.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-307'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-308','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-308.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-308'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-309','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-309.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-309'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-310','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-310.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-310'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-311','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-311.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-311'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-312','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-312.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-312'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-313','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-313.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-313'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-314','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-314.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-314'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-315','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-315.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-315'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-316','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-316.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-316'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-317','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-317.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-317'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-318','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-318.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-318'),
+('ORG-001','LIF-001','PR-001','LIF-User-Team-Q-319','LIF User Team Dashboard','json/LIF-User-Team.json','/Tool/LIF/PR-001/Questions/Q-319.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-319'),
+('ORG-001','AM-001','PR-001','AM-Insights-001','AM  Insights Dashboard','json/AM-Insights-001.json','/Tool/AM/PR-001/AM-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','AM-001'),
+('ORG-001','AM-001','PR-001','AM-Index-001','AM  KPI Index Dashboard','json/AM-Index-001.json','/Tool/AM/PR-001/AM-Index-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','AM-001'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-400','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-400.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-400'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-401','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-401.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-401'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-402','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-402.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-402'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-403','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-403.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-403'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-404','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-404.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-404'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-405','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-405.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-405'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-406','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-406.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-406'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-407','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-407.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-407'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-408','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-408.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-408'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-409','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-409.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-409'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-410','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-410.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-410'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-411','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-411.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-411'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-412','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-412.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-412'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-413','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-413.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-413'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-414','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-414.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-414'),
+('ORG-001','AM-001','PR-001','AM-User-Team-Q-415','AM User Team Dashboard','json/AM-User-Team.json','/Tool/AM/PR-001/Questions/Q-415.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-415'),
+('ORG-001','CB-001','PR-001','CB-Insights-001','CB  Insights Dashboard','json/CB-Insights-001.json','/Tool/CB/PR-001/CB-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','CB-001'),
+('ORG-001','CB-001','PR-001','CB-Index-001','CB  KPI Index Dashboard','json/CB-Index-001.json','/Tool/CB/PR-001/CB-Index-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','CB-001'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-500','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-500.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-500'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-501','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-501.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-501'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-502','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-502.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-502'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-503','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-503.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-503'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-504','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-504.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-504'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-505','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-505.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-505'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-506','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-506.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-506'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-507','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-507.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-507'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-508','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-508.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-508'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-509','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-509.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-509'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-510','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-510.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-510'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-511','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-511.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-511'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-512','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-512.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-512'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-513','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-513.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-513'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-514','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-514.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-514'),
+('ORG-001','CB-001','PR-001','CB-User-Team-Q-515','CB User Team Dashboard','json/CB-User-Team.json','/Tool/CB/PR-001/Questions/Q-515.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-515'),
+('ORG-001','SD-001','PR-001','SD-Insights-001','SD  Insights Dashboard','json/SD-Insights-001.json','/Tool/SD/PR-001/SD-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','SD-001'),
+('ORG-001','SD-001','PR-001','SD-Index-001','SD  KPI Index Dashboard','json/SD-Index-001.json','/Tool/SD/PR-001/SD-Index-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','SD-001'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-600','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-600.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-600'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-601','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-601.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-601'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-602','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-602.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-602'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-603','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-603.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-603'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-604','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-604.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-604'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-605','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-605.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-605'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-606','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-606.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-606'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-607','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-607.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-607'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-608','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-608.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-608'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-609','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-609.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-609'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-610','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-610.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-610'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-611','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-611.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-611'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-612','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-612.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-612'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-613','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-613.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-613'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-614','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-614.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-614'),
+('ORG-001','SD-001','PR-001','SD-User-Team-Q-615','SD User Team Dashboard','json/SD-User-Team.json','/Tool/SD/PR-001/Questions/Q-615.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-615'),
+('ORG-001','BEF-001','PR-001','BEF-Insights-001','BEF  Insights Dashboard','json/BEF-Insights-001.json','/Tool/BEF/PR-001/BEF-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','BEF-001'),
+('ORG-001','BEF-001','PR-001','BEF-Index-001','BEF  KPI Index Dashboard','json/BEF-Index-001.json','/Tool/BEF/PR-001/BEF-Index-001.json','Active','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','2018-11-16 08:35:48','0','Tool','BEF-001'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-700','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-700.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-700'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-701','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-701.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-701'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-702','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-702.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-702'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-703','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-703.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-703'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-704','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-704.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-704'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-705','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-705.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-705'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-706','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-706.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-706'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-707','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-707.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-707'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-708','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-708.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-708'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-709','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-709.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-709'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-710','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-710.json','Active','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','2018-11-16 08:35:49','1','Question','Q-710'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-711','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-711.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-711'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-712','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-712.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-712'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-713','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-713.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-713'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-714','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-714.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-714'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-715','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-715.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-715'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-716','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-716.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-716'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-717','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-717.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-717'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-718','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-718.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-718'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-719','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-719.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-719'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-720','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-720.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-720'),
+('ORG-001','BEF-001','PR-001','BEF-User-Team-Q-721','BEF User Team Dashboard','json/BEF-User-Team.json','/Tool/BEF/PR-001/Questions/Q-721.json','Active','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','2018-11-16 08:35:51','1','Question','Q-721'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-Insights-001','SST Brexit Insights Dashboard','json/SSTBR-Insights-001.json','/Tool/SSTBR/PR-001/SSTBR-Insights-001.json','Active','2018-11-16 08:35:48','2018-11-22 12:09:05','2018-11-16 08:35:48','2018-11-22 12:09:05','0','Tool','SSTBR-001'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-Index-001','SST Brexit KPI Index Dashboard','json/SSTBR-Index-001.json','/Tool/SSTBR/PR-001/SSTBR-Index-001.json','Active','2018-11-16 08:35:48','2018-11-22 12:09:05','2018-11-16 08:35:48','2018-11-22 12:09:05','0','Tool','SSTBR-001'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-100','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-100.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-100'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-101','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-101.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-101'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-102','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-102.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-102'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-103','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-103.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-103'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-104','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-104.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-104'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-105','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-105.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-105'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-106','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-106.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-106'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-107','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-107.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-107'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-108','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-108.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:05','2018-11-16 08:35:49','2018-11-22 12:09:05','1','Question','Q-108'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-109','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-109.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:06','2018-11-16 08:35:49','2018-11-22 12:09:06','1','Question','Q-109'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-110','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-110.json','Active','2018-11-16 08:35:49','2018-11-22 12:09:06','2018-11-16 08:35:49','2018-11-22 12:09:06','1','Question','Q-110'),
+('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-111','SST Brexit User Team Dashboard','json/SSTBR-User-Team.json','/Tool/SSTBR/PR-001/Questions/Q-111.json','Active','2018-11-16 08:35:51','2018-11-22 12:09:06','2018-11-16 08:35:51','2018-11-22 12:09:06','1','Question','Q-111');

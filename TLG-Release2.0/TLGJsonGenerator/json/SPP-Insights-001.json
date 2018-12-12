@@ -1,0 +1,9 @@
+{
+  "title" : "SPP Insights",
+  "description" : "SPP Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}

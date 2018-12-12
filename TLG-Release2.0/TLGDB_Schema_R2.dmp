@@ -1,0 +1,822 @@
+-- MySQL dump 10.16  Distrib 10.2.16-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: TLGTemp
+-- ------------------------------------------------------
+-- Server version	10.2.16-MariaDB-10.2.16+maria~xenial-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tabAlignPlusRoles`
+--
+
+DROP TABLE IF EXISTS `tabAlignPlusRoles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabAlignPlusRoles` (
+  `role_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabAlignPlusRoles`
+--
+
+LOCK TABLES `tabAlignPlusRoles` WRITE;
+/*!40000 ALTER TABLE `tabAlignPlusRoles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabAlignPlusRoles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabAuditLog`
+--
+
+DROP TABLE IF EXISTS `tabAuditLog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabAuditLog` (
+  `user_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `operation` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip_address` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `timezone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabAuditLog`
+--
+
+LOCK TABLES `tabAuditLog` WRITE;
+/*!40000 ALTER TABLE `tabAuditLog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabAuditLog` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabDashboardContext`
+--
+
+DROP TABLE IF EXISTS `tabDashboardContext`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabDashboardContext` (
+  `context_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `label` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`context_id`,`label`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabDashboardContext`
+--
+
+LOCK TABLES `tabDashboardContext` WRITE;
+/*!40000 ALTER TABLE `tabDashboardContext` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabDashboardContext` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabDashboardData`
+--
+
+DROP TABLE IF EXISTS `tabDashboardData`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabDashboardData` (
+  `organization_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dashboard_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dashboard_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dashboard_json_template` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dashboard_json` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `analysis_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `generation_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `dashboard_type` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `entity_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `entity_type` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_category` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `context_id` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabDashboardData`
+--
+
+LOCK TABLES `tabDashboardData` WRITE;
+/*!40000 ALTER TABLE `tabDashboardData` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabDashboardData` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabGroups`
+--
+
+DROP TABLE IF EXISTS `tabGroups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabGroups` (
+  `group_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_group` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabGroups`
+--
+
+LOCK TABLES `tabGroups` WRITE;
+/*!40000 ALTER TABLE `tabGroups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabGroups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabOrganization`
+--
+
+DROP TABLE IF EXISTS `tabOrganization`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabOrganization` (
+  `organization_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company_url` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`organization_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabOrganization`
+--
+
+LOCK TABLES `tabOrganization` WRITE;
+/*!40000 ALTER TABLE `tabOrganization` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabOrganization` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabPages`
+--
+
+DROP TABLE IF EXISTS `tabPages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabPages` (
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `questionnaire_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dimension_id` int(11) NOT NULL,
+  `no_of_questions` int(11) NOT NULL,
+  `question_no` int(11) NOT NULL,
+  `question_context` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question_benchmark` float DEFAULT NULL,
+  `question_weightage` float DEFAULT NULL,
+  `max_score` float DEFAULT NULL,
+  `response_metric_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reponse_options_label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_benchmark` float DEFAULT NULL,
+  `response_metric_weightage` float DEFAULT NULL,
+  `remarks` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `question_description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option_ids` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`tool_id`,`questionnaire_id`,`page_id`,`dimension_id`,`question_id`,`response_metric_id`),
+  KEY `questionnaire_id` (`questionnaire_id`),
+  KEY `dimension_id` (`dimension_id`),
+  KEY `question_id` (`question_id`),
+  KEY `response_metric_id` (`response_metric_id`),
+  CONSTRAINT `tabPages_ibfk_1` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`),
+  CONSTRAINT `tabPages_ibfk_3` FOREIGN KEY (`dimension_id`) REFERENCES `tabQuestionDimensions` (`dimension_id`),
+  CONSTRAINT `tabPages_ibfk_4` FOREIGN KEY (`question_id`) REFERENCES `tabQuestionBank` (`question_id`),
+  CONSTRAINT `tabPages_ibfk_5` FOREIGN KEY (`response_metric_id`) REFERENCES `tabResponseMetrics` (`response_metric_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabPages`
+--
+
+LOCK TABLES `tabPages` WRITE;
+/*!40000 ALTER TABLE `tabPages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabPages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabProject`
+--
+
+DROP TABLE IF EXISTS `tabProject`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabProject` (
+  `project_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `organization_id` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `start_date_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `end_date_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `percentage_completion` float DEFAULT 0,
+  `creation_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`project_id`),
+  KEY `organization_id` (`organization_id`),
+  CONSTRAINT `tabProject_ibfk_1` FOREIGN KEY (`organization_id`) REFERENCES `tabOrganization` (`organization_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabProject`
+--
+
+LOCK TABLES `tabProject` WRITE;
+/*!40000 ALTER TABLE `tabProject` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabProject` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabProjectMembers`
+--
+
+DROP TABLE IF EXISTS `tabProjectMembers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabProjectMembers` (
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabProjectMembers`
+--
+
+LOCK TABLES `tabProjectMembers` WRITE;
+/*!40000 ALTER TABLE `tabProjectMembers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabProjectMembers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabProjectTools`
+--
+
+DROP TABLE IF EXISTS `tabProjectTools`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabProjectTools` (
+  `project_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tool_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `questionnaire_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scenario_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scenario_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabProjectTools`
+--
+
+LOCK TABLES `tabProjectTools` WRITE;
+/*!40000 ALTER TABLE `tabProjectTools` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabProjectTools` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabProjectUserStatus`
+--
+
+DROP TABLE IF EXISTS `tabProjectUserStatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabProjectUserStatus` (
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `percentage_completion` float DEFAULT 0,
+  PRIMARY KEY (`user_id`,`project_id`,`tool_id`),
+  KEY `project_id` (`project_id`),
+  KEY `tool_id` (`tool_id`),
+  CONSTRAINT `tabProjectUserStatus_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `tabProject` (`project_id`),
+  CONSTRAINT `tabProjectUserStatus_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `tabUser` (`id`),
+  CONSTRAINT `tabProjectUserStatus_ibfk_3` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabProjectUserStatus`
+--
+
+LOCK TABLES `tabProjectUserStatus` WRITE;
+/*!40000 ALTER TABLE `tabProjectUserStatus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabProjectUserStatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabQuestionBank`
+--
+
+DROP TABLE IF EXISTS `tabQuestionBank`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabQuestionBank` (
+  `question_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dimension_id` int(11) NOT NULL,
+  `response_metric_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `max_score` float DEFAULT NULL,
+  `weightage` float DEFAULT NULL,
+  `question_benchmark` float DEFAULT NULL,
+  `response_metric_benchmark` float DEFAULT NULL,
+  `option_ids` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option_labels` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question_context` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question_description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `template_url` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`question_id`,`version`,`tool_id`,`dimension_id`,`response_metric_id`),
+  KEY `tool_id` (`tool_id`),
+  KEY `dimension_id` (`dimension_id`),
+  KEY `response_metric_id` (`response_metric_id`),
+  CONSTRAINT `tabQuestionBank_ibfk_1` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`),
+  CONSTRAINT `tabQuestionBank_ibfk_2` FOREIGN KEY (`dimension_id`) REFERENCES `tabQuestionDimensions` (`dimension_id`),
+  CONSTRAINT `tabQuestionBank_ibfk_3` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`),
+  CONSTRAINT `tabQuestionBank_ibfk_4` FOREIGN KEY (`dimension_id`) REFERENCES `tabQuestionDimensions` (`dimension_id`),
+  CONSTRAINT `tabQuestionBank_ibfk_5` FOREIGN KEY (`response_metric_id`) REFERENCES `tabResponseMetrics` (`response_metric_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabQuestionBank`
+--
+
+LOCK TABLES `tabQuestionBank` WRITE;
+/*!40000 ALTER TABLE `tabQuestionBank` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabQuestionBank` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabQuestionDimensions`
+--
+
+DROP TABLE IF EXISTS `tabQuestionDimensions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabQuestionDimensions` (
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `questionnaire_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dimension_id` int(11) NOT NULL,
+  `dimension_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `weightage` float DEFAULT NULL,
+  `max_score` float DEFAULT NULL,
+  `benchmark` float DEFAULT NULL,
+  `parent_dimension` int(11) DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `context` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`dimension_id`),
+  KEY `tool_id` (`tool_id`),
+  CONSTRAINT `tabQuestionDimensions_ibfk_1` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabQuestionDimensions`
+--
+
+LOCK TABLES `tabQuestionDimensions` WRITE;
+/*!40000 ALTER TABLE `tabQuestionDimensions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabQuestionDimensions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabQuestionnaire`
+--
+
+DROP TABLE IF EXISTS `tabQuestionnaire`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabQuestionnaire` (
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `questionnaire_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `questionnaire_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_of_pages` int(11) NOT NULL,
+  `page_no` int(11) NOT NULL,
+  `page_version` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `next_page_id` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `questionnaire_document_type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `questionnaire_url` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instruction_to_fill` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scoring_guidelines` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remarks` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`tool_id`,`questionnaire_id`,`page_id`),
+  CONSTRAINT `tabQuestionnaire_ibfk_1` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabQuestionnaire`
+--
+
+LOCK TABLES `tabQuestionnaire` WRITE;
+/*!40000 ALTER TABLE `tabQuestionnaire` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabQuestionnaire` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabQuestionnaireResponses`
+--
+
+DROP TABLE IF EXISTS `tabQuestionnaireResponses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabQuestionnaireResponses` (
+  `questionnaire_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `team_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `primary_dimension_id` int(11) DEFAULT NULL,
+  `secondary_dimension_id` int(11) DEFAULT NULL,
+  `response_type` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `response_metric_id` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option_id` int(11) DEFAULT NULL,
+  `score` float DEFAULT NULL,
+  `percentage_score` float DEFAULT NULL,
+  `max_score` float DEFAULT NULL,
+  `status` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number_of_updates` int(11) DEFAULT NULL,
+  `request_time_stamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `response_time_stamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `option_label` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `entity_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `entity_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`questionnaire_id`,`tool_id`,`project_id`,`user_id`,`team_id`,`question_id`,`response_metric_id`),
+  KEY `tool_id` (`tool_id`),
+  KEY `project_id` (`project_id`),
+  KEY `question_id` (`question_id`),
+  KEY `user_id` (`user_id`),
+  KEY `questionnaire_id` (`questionnaire_id`),
+  CONSTRAINT `tabQuestionnaireResponses_ibfk_1` FOREIGN KEY (`tool_id`) REFERENCES `tabQuestionnaire` (`tool_id`),
+  CONSTRAINT `tabQuestionnaireResponses_ibfk_2` FOREIGN KEY (`project_id`) REFERENCES `tabProject` (`project_id`),
+  CONSTRAINT `tabQuestionnaireResponses_ibfk_3` FOREIGN KEY (`question_id`) REFERENCES `tabQuestionBank` (`question_id`),
+  CONSTRAINT `tabQuestionnaireResponses_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `tabUser` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabQuestionnaireResponses`
+--
+
+LOCK TABLES `tabQuestionnaireResponses` WRITE;
+/*!40000 ALTER TABLE `tabQuestionnaireResponses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabQuestionnaireResponses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabQuestionnaireTemplateMetadataTool`
+--
+
+DROP TABLE IF EXISTS `tabQuestionnaireTemplateMetadataTool`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabQuestionnaireTemplateMetadataTool` (
+  `id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `template_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `template_version` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `template_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_version` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `next_page_id` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `template_doc_type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `template_page_location` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instructions_to_fill` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `primary_dimension` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `secondary_dimension` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question_context` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reponse_options_label` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `scoring_guidelines` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remarks` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabQuestionnaireTemplateMetadataTool`
+--
+
+LOCK TABLES `tabQuestionnaireTemplateMetadataTool` WRITE;
+/*!40000 ALTER TABLE `tabQuestionnaireTemplateMetadataTool` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabQuestionnaireTemplateMetadataTool` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabRBAC`
+--
+
+DROP TABLE IF EXISTS `tabRBAC`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabRBAC` (
+  `user_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `object` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `operation` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permission` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_date_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `end_date_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `creation_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabRBAC`
+--
+
+LOCK TABLES `tabRBAC` WRITE;
+/*!40000 ALTER TABLE `tabRBAC` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabRBAC` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabResponseMetrics`
+--
+
+DROP TABLE IF EXISTS `tabResponseMetrics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabResponseMetrics` (
+  `response_metric_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `questionnaire_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`response_metric_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabResponseMetrics`
+--
+
+LOCK TABLES `tabResponseMetrics` WRITE;
+/*!40000 ALTER TABLE `tabResponseMetrics` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabResponseMetrics` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabScoreCard`
+--
+
+DROP TABLE IF EXISTS `tabScoreCard`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabScoreCard` (
+  `score_card_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `scenario_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metric_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metric_value` float DEFAULT NULL,
+  `entity_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `entity_type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dimension_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dimension_type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_score_card_type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `child_score_card_type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `label` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `benchmark` float DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`tool_id`,`project_id`,`metric_name`,`entity_id`,`entity_type`,`dimension_id`,`dimension_type`,`question_id`),
+  UNIQUE KEY `score_card_id` (`score_card_id`),
+  KEY `project_id` (`project_id`),
+  CONSTRAINT `tabScoreCard_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `tabProject` (`project_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41404 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabScoreCard`
+--
+
+LOCK TABLES `tabScoreCard` WRITE;
+/*!40000 ALTER TABLE `tabScoreCard` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabScoreCard` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabTools`
+--
+
+DROP TABLE IF EXISTS `tabTools`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabTools` (
+  `tool_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `benchmark` float DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `description_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`tool_id`,`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabTools`
+--
+
+LOCK TABLES `tabTools` WRITE;
+/*!40000 ALTER TABLE `tabTools` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabTools` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabUser`
+--
+
+DROP TABLE IF EXISTS `tabUser`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabUser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `organization_id` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `groups` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job_role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `align_plus_roles` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '2018-12-04 10:30:00',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `organization_id` (`organization_id`),
+  KEY `align_plus_roles` (`align_plus_roles`),
+  CONSTRAINT `tabUser_ibfk_1` FOREIGN KEY (`organization_id`) REFERENCES `tabOrganization` (`organization_id`),
+  CONSTRAINT `tabUser_ibfk_2` FOREIGN KEY (`align_plus_roles`) REFERENCES `tabAlignPlusRoles` (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabUser`
+--
+
+LOCK TABLES `tabUser` WRITE;
+/*!40000 ALTER TABLE `tabUser` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabUser` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabUserOptionScore`
+--
+
+DROP TABLE IF EXISTS `tabUserOptionScore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabUserOptionScore` (
+  `question_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `questionnaire_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `weightage` float DEFAULT NULL,
+  `score` float DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_modified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`tool_id`,`question_id`,`response_metric_id`,`option_id`),
+  KEY `question_id` (`question_id`),
+  KEY `response_metric_id` (`response_metric_id`),
+  CONSTRAINT `tabUserOptionScore_ibfk_1` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`),
+  CONSTRAINT `tabUserOptionScore_ibfk_2` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`),
+  CONSTRAINT `tabUserOptionScore_ibfk_3` FOREIGN KEY (`question_id`) REFERENCES `tabQuestionBank` (`question_id`),
+  CONSTRAINT `tabUserOptionScore_ibfk_4` FOREIGN KEY (`tool_id`) REFERENCES `tabTools` (`tool_id`),
+  CONSTRAINT `tabUserOptionScore_ibfk_5` FOREIGN KEY (`response_metric_id`) REFERENCES `tabResponseMetrics` (`response_metric_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabUserOptionScore`
+--
+
+LOCK TABLES `tabUserOptionScore` WRITE;
+/*!40000 ALTER TABLE `tabUserOptionScore` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabUserOptionScore` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabVisualizationData`
+--
+
+DROP TABLE IF EXISTS `tabVisualizationData`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabVisualizationData` (
+  `organization_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `visualization_output_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `results_data_set_URL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabVisualizationData`
+--
+
+LOCK TABLES `tabVisualizationData` WRITE;
+/*!40000 ALTER TABLE `tabVisualizationData` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabVisualizationData` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-12-11 14:18:59

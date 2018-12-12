@@ -1,0 +1,1 @@
+questionnaire_id,tool_id,project_id,user_id,team_id,role,question_id,primary_dimension_id,secondary_dimension_id,response_type,response_metric_id,option_id,score,percentage_score,max_score,status,number_of_updates,request_time_stamp,response_time_stamp,creation_date,last_modified_date,option_label,entity_type,page_id,entity_id

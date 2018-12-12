@@ -1,0 +1,30 @@
+{
+  "dashBoardId" : null,
+  "title" : "Strategy Stress Test User Team",
+  "description" : "Will show how different users and teams have scored for the question",
+  "type" : "Multiple Bar Chart",
+  "questionId" : "Q-007",
+  "questionDesc" : "We have explicitly factored in competitive responses to our strategy",
+  "teamData" : [ {
+    "teamId" : "Management",
+    "teamName" : null,
+    "teamScore" : 50.0,
+    "userData" : [ {
+      "userName" : "Robert",
+      "userId" : "robert.noye-allen-tna@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 50.0
+    }, {
+      "userName" : "Michelle",
+      "userId" : "michelle.debique@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 75.0
+    }, {
+      "userName" : "Bill",
+      "userId" : "bill.mitchell-tna@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 50.0
+    } ],
+    "dimdata" : null
+  } ]
+}

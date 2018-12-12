@@ -1,0 +1,132 @@
+select * from tabQuestionBank;
+
+select * from tabScoreCard;
+
+select * from tabquestiondimensions
+
+desc tabscorecard;
+delete from tabDashboardData;
+
+select * from tabresponsemetrics
+
+show tables
+
+select * from tabresponsemetrics
+
+Update tabDashboardData set (generation_date = '2018-11-01 22:35:12.873', last_modified_date = '2018-11-01 22:35:12.873')
+where organization_id = 'ORG-001' and tool_id = 'SST-001' and project_id = 'PR-001' and dashboard_id = 'SSTUserTeam_Q-007'
+
+desc tabDashboardData
+
+Alter table tabDashboardData modify dashboard_id varchar(50)
+
+Alter table tabDashboardData add entity_type varchar(50)
+
+
+
+DROP TABLE IF EXISTS `tabResponseMetrics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tabResponseMetrics` (
+  `tool_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `response_metric_Name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `last_modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`response_metric_id`, `tool_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+select * from tabresponsemetrics;
+
+
+
+
+select sc.score_card_id, sc.metric_name, sc.metric_value, sc.entity_id, sc.entity_type, sc.dimension_id, sc.dimension_type,
+sc.question_id, sc.parent_score_card_type, sc.child_score_card_type, sc.label, sc.benchmark, qb.question_description, qb.dimension_id 
+from tabScoreCard as sc 
+left join tabQuestionBank as qb on sc.dimension_id = qb.question_id and sc.tool_id = qb.tool_id 
+where sc.tool_id = 'SST-001' and sc.project_id =  'PR-001' and 
+((sc.entity_type = 'organization' and sc.entity_id = 'ORG-001' and sc.dimension_type = 'Question' and metric_name = 'OEPS') 
+or (sc.entity_type = 'organization' and sc.entity_id = 'ORG-001' and sc.dimension_type = 'Question' and metric_name = 'OESDS'))
+
+
+select sc.score_card_id, sc.metric_name, sc.metric_value, sc.entity_id, sc.entity_type, sc.dimension_id, 
+sc.dimension_type, sc.question_id, sc.parent_score_card_type, sc.child_score_card_type, sc.label, sc.benchmark , qb.question_description, 
+qb.dimension_id , qd.dimension_name, qd.benchmark from tabScoreCard as sc 
+left join tabQuestionBank as qb on sc.dimension_id = qb.question_id and sc.tool_id = qb.tool_id
+left join tabQuestionDimensions as qd on sc.dimension_type = 'Primary Dimension' and sc.dimension_id = qd.dimension_id and sc.tool_id = qd.tool_id
+where sc.tool_id = 'SST-001' and sc.project_id =  'PR-001' and (
+(sc.entity_type = 'organization' and sc.entity_id = 'ORG-001' and sc.dimension_type = 'Tool' and metric_name = 'OTI') or 
+(sc.entity_type = 'organization' and sc.entity_id = 'ORG-001' and sc.dimension_type = 'Primary Dimension' and metric_name = 'OPDPS'))
+
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-Insights-001', 'SST Insights Dashboard', '',
+	'/Tool/SST/SST-Insights-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SST-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-Index-001', 'SST KPI Index Dashboard', '',
+	'/Tool/SST/SST-Index-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SST-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-001', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-001.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-002', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-002.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-002');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-003', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-003.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-003');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-004', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-004.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-004');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-005', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-005.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-005');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-006', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-006.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-006');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-007', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-007.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-007');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-008', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-008.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-008');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-009', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-009.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-009');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-010', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-010.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-010');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-011', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-011.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-011');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-012', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-012.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-012');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-013', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-013.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-013');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-014', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-014.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-014');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-015', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-015.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-015');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-016', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-016.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-016');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-017', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-017.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-017');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SST-001','PR-001','SST-User-Team-Q-018', 'SST User Team Dashboard', '',
+	'/Tool/SST/Questions/Q-018.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-018');
+
+	
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-Insights-001', 'SST Brexit Insights Dashboard', '',
+	'/Tool/SSTBR/SSTBR-Insights-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SSTBR-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-Index-001', 'SST Brexit KPI Index Dashboard', '',
+	'/Tool/SSTBR/SSTBR-Index-001.json','Active',now(), now(),now(),now(), '0', 'Tool', 'SSTBR-001');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-100', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-100.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-100');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-101', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-101.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-101');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-102', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-102.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-102');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-103', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-103.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-103');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-104', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-104.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-104');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-105', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-105.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-105');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-106', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-106.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-106');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-107', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-107.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-107');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-108', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-108.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-108');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-109', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-109.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-109');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-110', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-110.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-110');
+INSERT INTO tabDashboardData VALUES ('ORG-001','SSTBR-001','PR-001','SSTBR-User-Team-Q-111', 'SST Brexit User Team Dashboard', '',
+	'/Tool/SSTBR/Questions/Q-111.json','Active',now(), now(),now(),now(), '1', 'Question', 'Q-111');

@@ -1,0 +1,73 @@
+tool_id,questionnaire_id,dimension_id,dimension_name,description,weightage,max_score,benchmark,parent_dimension,creation_date,last_modified_by,last_modified_date,context
+SST-001,,1,Robust,Robust,0.25,24,60,NULL,2010-08-18 16:45:00,NULL,2010-05-18 11:45:00,NULL
+SST-001,,2,Resilient,Resilient,0.25,24,60,NULL,2010-08-18 16:45:00,NULL,2010-05-18 11:56:00,NULL
+SST-001,,3,Ready,Ready,0.5,24,60,NULL,2010-08-18 16:45:00,NULL,2010-05-18 11:59:00,NULL
+SST-001,,4,Looking Inwards,Looking Inwards,NULL,12,NULL,1,0000-00-00 00:00:00,NULL,2010-05-18 12:00:00,NULL
+SST-001,,5,Looking Outwards,Looking Outwards,NULL,12,NULL,1,0000-00-00 00:00:00,NULL,2010-05-18 12:03:00,NULL
+SST-001,,6,Looking Inwards,Looking Inwards,NULL,12,NULL,2,0000-00-00 00:00:00,NULL,2010-05-18 12:05:00,NULL
+SST-001,,7,Looking Outwards,Looking Outwards,NULL,12,NULL,2,0000-00-00 00:00:00,NULL,2010-05-18 12:05:00,NULL
+SST-001,,8,Looking Inwards,Looking Inwards,NULL,12,NULL,3,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SST-001,,9,Looking Outwards,Looking Outwards,NULL,12,NULL,3,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SSTBR-001,,10,Potential Consequences of Brexit,Potential Consequences of Brexit,NULL,180,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SSTBR-001,,11,Threats to Revenue,Threats to revenue,NULL,36,NULL,10,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SSTBR-001,,12,Exchange Rate Movements,Exchange rate movements,NULL,36,NULL,10,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SSTBR-001,,13,Threats to Costs,Threats to costs,NULL,36,NULL,10,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SSTBR-001,,14,Threat to Availability of Skills,Threat to availability of skills,NULL,36,NULL,10,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SSTBR-001,,15,Non-tariff Threat to Business,Non-tariff threat to business,NULL,36,NULL,10,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,16,Strategic Planning Process,Strategic Planning Process,1,140,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,17,Frequency,Frequency,NULL,10,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,18,Involvement,Involvement,NULL,10,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,19,Top-down Initiation,Top-down initiation,NULL,10,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,20,Ensuring Robustness of Strategy,Ensuring robustness of strategy,NULL,30,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,21,Ensuring Resilience of Strategy,Ensuring resilience of strategy,NULL,30,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,22,How Ready is the Organization to Execute the Strategy,How ready is the organization to execute the strategy,NULL,40,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SPP-001,,23,Link the Strategy to its Execution,Link the strategy to its execution,NULL,10,NULL,16,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,24,Performance Leadership,Performance Leadership,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,25,Strategic Leadership,Strategic leadership,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,26,Systems Leadership,Systems leadership,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,27,Inclusive Leadership,Inclusive leadership,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,28,Enhancing Performance of Individuals and Teams,Enhancing performance of individuals and teams,NULL,20,NULL,24,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,29,Anticipating our customers' needs through a thorough understanding of our industrial domain,Anticipating our customers' needs through a thorough understanding of our industrial domain,NULL,20,NULL,25,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,30,Taking a 'whole system' leadership role to optimise system performance,Taking a 'whole system' leadership role to optimize system performance,NULL,20,NULL,26,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+LIF-001,,31,Nurturing a culture to deliver the strategy of my business,Nurturing a culture to deliver the strategy of my business,NULL,20,NULL,27,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,32,Role Clarity,Role clarity,0.2,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,33,Management Relationship,Management Relationship,0.2,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,34,Autonomy and Control,Autonomy and Control,0.2,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,35,Purpose and Strategy,Purpose and Strategy,0.4,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,36,Are employees clear about the roles,Are employees clear about the roles,NULL,16,NULL,32,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,37,How well do we help nurture the relationships between managers and employees,How well do we help nurture the relationships between managers and employees,NULL,16,NULL,33,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,38,Are employees clear about what they are accountable for and where they can make decisions?,Are employees clear about what they are accountable for and where they can make decisions?,NULL,16,NULL,34,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+AM-001,,39,How clear are all employees about our core purpose and our strategy?,How clear are all employees about our core purpose and our strategy?,NULL,16,NULL,35,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,40,Hierarchy Basis,Hierarchy basis,NULL,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,41,Role Basis,Role basis,NULL,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,42,Knowledge Basis,Knowledge basis,NULL,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,43,Me Basis,Me Basis,NULL,16,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,44,Power is concentrated in the hands of a few key players.,Power is concentrated in the hands of a few key players.,NULL,16,NULL,40,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,45,Power derives from a person's position within a highly defined (and often bureaucratic) structure.,Power derives from a person's position within a highly defined (and often bureaucratic) structure.,NULL,16,NULL,41,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,46,"Power derives from recognized expertise. Such organizations often adopt a team-based, problem-solving approach.","Power derives from recognized expertise. Such organizations often adopt a team-based, problem-solving approach.",NULL,16,NULL,42,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+CB-001,,47,Power is assumed where individuals consider themselves (their role and contribution) superior to the organization.,Power is assumed where individuals consider themselves (their role and contribution) superior to the organization.,NULL,16,NULL,43,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SD-001,,48,Product Development Focus,Product development focus,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SD-001,,49,Operational Effectiveness Focus,Operational effectiveness focus,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SD-001,,50,Customer Interface Focus,Customer internal focus,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SD-001,,51,Do we have a strategic leadership position that is based on product excellence?,Do we have a strategic leadership position that is based on product excellence?,NULL,20,NULL,48,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SD-001,,52,Do we have a strategic leadership position that is based on our operational excellence?,Do we have a strategic leadership position that is based on our operational excellence?,NULL,20,NULL,49,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+SD-001,,53,Do we have a strategic leadership position that is based on the excellence of our customer expertise and interface?,Do we have a strategic leadership position that is based on the excellence of our customer expertise and interface?,NULL,20,NULL,50,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,54,Whole System Leadership,How confident are you that our Board exhibits the following capabilities?,NULL,20,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,55,Business Leadership,"Leading our business to deliver its purpose and strategic goals, whilst ensuring an oversight of performance and risk",NULL,68,60,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,56,Strategic Leadership,Strategic leadership,NULL,20,NULL,55,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,57,Sustainable Improvement and Capability Leadership,Sustainable improvement and capability leadership,NULL,24,NULL,55,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,58,Performance and Risk Oversight Leadership,Performance and risk oversight leadership,NULL,12,NULL,55,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,59,Leadership Through Governance,Leadership through governance,NULL,12,NULL,55,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,60,Identifying Risks,Identifying risks,NULL,60,50,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,61,Confirming Governance Status,Confirming governance status,NULL,64,50,NULL,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,62,Technical Risks,Technical risks,NULL,12,NULL,60,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,63,Regulatory Risks,Regulatory risks,NULL,12,NULL,60,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,64,Capability Risks,Capability risks,NULL,8,NULL,60,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,65,Financial Risks,Financial risks,NULL,20,NULL,60,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,66,Reputation Risks,Reputation risks,NULL,8,NULL,60,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,67,Technical Risks,Technical risks,NULL,12,NULL,61,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,68,Regulatory Risks,Regulatory risks,NULL,16,NULL,61,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,69,Capability Risks,Capability risks,NULL,8,NULL,61,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,70,Financial Risks,Financial risks,NULL,20,NULL,61,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+RG-001,,71,Reputation Risks,Reputation risks,NULL,8,NULL,61,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL
+BEF-001,,72,Taking a leadership role with all stakeholders to deliver shared outcomes for our business,How confident are you that our Board exhibits the following capabilities?,NULL,20,60,54,0000-00-00 00:00:00,NULL,2010-05-18 12:06:00,NULL

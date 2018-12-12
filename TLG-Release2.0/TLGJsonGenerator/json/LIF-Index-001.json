@@ -1,0 +1,5 @@
+{
+  "title" : "LIF Summary ",
+  "description" : "Show Profile of Business as a pie chart, where each Dimension is one segment of the pie",
+  "type" : "Piechart"
+}

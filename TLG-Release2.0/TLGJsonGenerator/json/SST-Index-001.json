@@ -1,0 +1,5 @@
+{
+  "title" : "Strategy Stress Test Index",
+  "description" : "SST Index is one of the Key Performance Indicator (KPI) expressed as a percentage score against the benchmark.",
+  "type" : "Guage"
+}

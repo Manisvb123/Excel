@@ -1,0 +1,9 @@
+{
+  "title" : "RG Insights",
+  "description" : "RG Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}

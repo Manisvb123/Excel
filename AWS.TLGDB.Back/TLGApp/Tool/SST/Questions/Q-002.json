@@ -1,0 +1,30 @@
+{
+  "dashBoardId" : null,
+  "title" : "Strategy Stress Test User Team",
+  "description" : "Will show how different users and teams have scored for the question",
+  "type" : "Multiple Bar Chart",
+  "questionId" : "Q-002",
+  "questionDesc" : "We have all of the external competitive strengths (e.g. technology, brand, distribution, scale, access) we need to ensure we can win with our strategy",
+  "teamData" : [ {
+    "teamId" : "Management",
+    "teamName" : null,
+    "teamScore" : 62.5,
+    "userData" : [ {
+      "userName" : "Robert",
+      "userId" : "robert.noye-allen-tna@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 75.0
+    }, {
+      "userName" : "Michelle",
+      "userId" : "michelle.debique@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 75.0
+    }, {
+      "userName" : "Bill",
+      "userId" : "bill.mitchell-tna@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 50.0
+    } ],
+    "dimdata" : null
+  } ]
+}

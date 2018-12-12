@@ -1,0 +1,9 @@
+{
+  "title" : "AM Insights",
+  "description" : "AM Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}

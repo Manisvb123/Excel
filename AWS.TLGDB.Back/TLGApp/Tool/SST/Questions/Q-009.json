@@ -1,0 +1,30 @@
+{
+  "dashBoardId" : null,
+  "title" : "Strategy Stress Test User Team",
+  "description" : "Will show how different users and teams have scored for the question",
+  "type" : "Multiple Bar Chart",
+  "questionId" : "Q-009",
+  "questionDesc" : "There are no potential changes in rules/regulations/costs visible that could upset our assumptions.",
+  "teamData" : [ {
+    "teamId" : "Management",
+    "teamName" : null,
+    "teamScore" : 0.0,
+    "userData" : [ {
+      "userName" : "Robert",
+      "userId" : "robert.noye-allen-tna@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 0.0
+    }, {
+      "userName" : "Michelle",
+      "userId" : "michelle.debique@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 25.0
+    }, {
+      "userName" : "Bill",
+      "userId" : "bill.mitchell-tna@moorestephens.com",
+      "metricName" : "EPS",
+      "metricValue" : 0.0
+    } ],
+    "dimdata" : null
+  } ]
+}

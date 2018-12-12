@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:metricSearchDataWrapper
+	xmlns:ns2="com.merit.tlg.dashboard.model">
+	<metricSearchData searchId="SSTBR-Insights-001">
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Response Metric</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OEMPS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="SSTBR-Index-001">
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Response Metric</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OTEMPS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="SPP-Index-001">
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Tool</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OTI</metricName>
+		</metricParams>
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Secondary Dimension</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OSDPS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="Index-Default">
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Primary Dimension</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OPDPS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="Index-Default-OTI">
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Tool</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OTI</metricName>
+		</metricParams>
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Primary Dimension</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OPDPS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="Insights-Default">
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Question</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OEPS</metricName>
+		</metricParams>
+		<metricParams>
+			<dimIdReq>false</dimIdReq>
+			<dimType>Question</dimType>
+			<entityIdReq>true</entityIdReq>
+			<entityType>organization</entityType>
+			<metricName>OESDS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="User-Team-Team">
+		<metricParams>
+			<dimIdReq>true</dimIdReq>
+			<dimType>Question</dimType>
+			<entityIdReq>false</entityIdReq>
+			<entityType>team</entityType>
+			<metricName>TEPS</metricName>
+		</metricParams>
+	</metricSearchData>
+	<metricSearchData searchId="User-Team-User">
+		<metricParams>
+			<dimIdReq>true</dimIdReq>
+			<dimType>Question</dimType>
+			<entityIdReq>false</entityIdReq>
+			<entityType>user</entityType>
+			<metricName>EPS</metricName>
+		</metricParams>
+	</metricSearchData>
+</ns2:metricSearchDataWrapper>

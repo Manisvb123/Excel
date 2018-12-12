@@ -1,0 +1,63 @@
+{
+  "dashBoardId" : null,
+  "title" : "Strategy Stress Test Index",
+  "description" : "SST Index is one of the Key Performance Indicator (KPI) expressed as a percentage score against the benchmark.",
+  "type" : "Guage",
+  "kpiData" : [ {
+    "kpiName" : "OTI",
+    "kpiDisplayName" : "SST Index",
+    "kpiValue" : 54.7,
+    "kpiBenchmark" : 0.0,
+    "region1Threshold" : 45.0,
+    "region1Label" : "Improve",
+    "region1Color" : "Red",
+    "region2Threshold" : 100.0,
+    "region2Label" : "Safe",
+    "region2Color" : "Green",
+    "region3Threshold" : 0.0,
+    "region3Label" : null,
+    "region3Color" : null
+  }, {
+    "kpiName" : "OPDPS",
+    "kpiDisplayName" : "Robust Index",
+    "kpiValue" : 52.1,
+    "kpiBenchmark" : 0.0,
+    "region1Threshold" : 45.0,
+    "region1Label" : "Improve",
+    "region1Color" : "Red",
+    "region2Threshold" : 100.0,
+    "region2Label" : "Safe",
+    "region2Color" : "Green",
+    "region3Threshold" : 0.0,
+    "region3Label" : null,
+    "region3Color" : null
+  }, {
+    "kpiName" : "OPDPS",
+    "kpiDisplayName" : "Resilient Index",
+    "kpiValue" : 33.3,
+    "kpiBenchmark" : 0.0,
+    "region1Threshold" : 45.0,
+    "region1Label" : "Improve",
+    "region1Color" : "Red",
+    "region2Threshold" : 100.0,
+    "region2Label" : "Safe",
+    "region2Color" : "Green",
+    "region3Threshold" : 0.0,
+    "region3Label" : null,
+    "region3Color" : null
+  }, {
+    "kpiName" : "OPDPS",
+    "kpiDisplayName" : "Ready Index",
+    "kpiValue" : 66.7,
+    "kpiBenchmark" : 0.0,
+    "region1Threshold" : 45.0,
+    "region1Label" : "Improve",
+    "region1Color" : "Red",
+    "region2Threshold" : 100.0,
+    "region2Label" : "Safe",
+    "region2Color" : "Green",
+    "region3Threshold" : 0.0,
+    "region3Label" : null,
+    "region3Color" : null
+  } ]
+}

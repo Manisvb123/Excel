@@ -1,0 +1,23 @@
+{
+  "title" : "SST Brexit Insights",
+  "description" : "SST Brexit Insights",
+  "type" : "Bubble Chart",
+  "dataPtShape" : "Bubble",
+  "regions" : [ {
+    "label" : "Greatest Concern",
+    "color" : null,
+    "x1Coordinate" : 0.0,
+    "y1Coordinate" : 0.0,
+    "x2Coordinate" : 0.0,
+    "y2Coordinate" : 0.0,
+    "x3Coordinate" : 0.0,
+    "y3Coordinate" : 0.0,
+    "x4Coordinate" : 0.0,
+    "y4Coordinate" : 0.0
+  } ],
+  "legends" : null,
+  "axes" : {
+    "xAxisLabel" : "Level of Confidence",
+    "yAxisLabel" : "Probability"
+  }
+}

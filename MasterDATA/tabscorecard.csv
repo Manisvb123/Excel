@@ -1,0 +1,1 @@
+score_card_id,tool_id,project_id,scenario_id,metric_name,metric_value,entity_id,entity_type,dimension_id,dimension_type,question_id,parent_score_card_type,child_score_card_type,label,benchmark,creation_date,last_modified_date

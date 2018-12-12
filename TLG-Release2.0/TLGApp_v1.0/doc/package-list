@@ -1,0 +1,8 @@
+
+com.merit.tlgapp.controller
+com.merit.tlgapp.dbutility
+com.merit.tlgapp.exception
+com.merit.tlgapp.model
+com.merit.tlgapp.model.generic
+com.merit.tlgapp.services
+com.merit.tlgapp.utility

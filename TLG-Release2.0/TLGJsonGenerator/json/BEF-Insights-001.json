@@ -1,0 +1,9 @@
+{
+  "title" : "BEF Insights",
+  "description" : "BEF Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}

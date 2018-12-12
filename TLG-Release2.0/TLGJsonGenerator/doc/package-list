@@ -1,0 +1,7 @@
+com.merit.tlg.dashboard.business
+com.merit.tlg.dashboard.dto
+com.merit.tlg.dashboard.model
+com.merit.tlg.dashboard.persistance
+com.merit.tlg.dashboard.persistance.common
+com.merit.tlg.dashboard.utils
+com.merit.tool.Dashboard

@@ -1,0 +1,9 @@
+{
+  "title" : "LIF Insights",
+  "description" : "LIF Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}

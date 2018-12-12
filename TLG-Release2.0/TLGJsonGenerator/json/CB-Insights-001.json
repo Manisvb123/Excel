@@ -1,0 +1,9 @@
+{
+  "title" : "CB Insights",
+  "description" : "CB Insights",
+  "type" : "X-Y Scatter plot",
+  "dataPtShape" : "Square",
+  "regions" : null,
+  "legends" : null,
+  "axes" : null
+}
